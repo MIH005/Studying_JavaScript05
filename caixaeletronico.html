@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora de Codar 5</title>
+</head>
+<body>
+    <script>
+        var nome = prompt("Digite seu nome:");
+        alert("Olá " + nome + " é um prazer ter você por aqui!");
+
+        var saldo = 0;
+        var extrato = [];
+        var senha = 3589;
+
+        function validarSenha() {
+            var senhaDigitada = parseInt(prompt("Para continuar digite a senha:"));
+            if (senha !== senhaDigitada) {
+                alert("Senha incorreta. Tente novamente.");
+                return false;
+            }
+            return true;
+        }
+
+        function inicio() {
+            var opcao = 0;
+
+            while (opcao !== 6) {
+                opcao = parseInt(prompt("Escolha uma opção! 1 - Saldo 2 - Depósito 3 - Saque   4 - Extrato  5 - Transferência   6 - Sair"));
+
+                switch (opcao) {
+                    case 1: // Saldo
+                        if (validarSenha()) {
+                            alert("Seu saldo é: " + saldo);
+                        }
+                        break;
+
+                    case 2: // Depósito
+                        var deposito = parseFloat(prompt("Digite o valor do depósito:"));
+                        if (isNaN(deposito) || deposito <= 0) {
+                            alert("Operação não autorizada. O valor deve ser maior que zero.");
+                        } else {
+                            alert("Deposito realizado com sucesso.")
+                            saldo += deposito;
+                            extrato.push("Depósito no valor de: " + deposito);
+                        }
+                        break;
+
+                    case 3: // Saque
+                        var saque = parseFloat(prompt("Digite o valor do saque:"));
+                        if (isNaN(saque) || saque <= 0) {
+                            alert("Operação não autorizada. O valor deve ser maior que zero.");
+                        } else if (saque > saldo) {
+                            alert("Operação não autorizada. Saldo insuficiente.");
+                        } else {
+                            alert("Saque realizado com sucesso.")
+                            saldo -= saque;
+                            extrato.push("Saque: " + saque);
+                        }
+                        break;
+
+                    case 4: // Extrato
+                        if (validarSenha()) {
+                            if (extrato.length === 0) {
+                                alert("Você ainda não tem extratos.");
+                            } else {
+                                var extratoMensagens = "Extrato:\n";
+                                for (var i = 0; i < extrato.length; i++) {
+                                    extratoMensagens += extrato[i] + "\n";
+                                }
+                                alert(extratoMensagens);
+                            }
+                        }
+                        break;
+
+                    case 5: // Transferência
+                        if (validarSenha()) {
+                            var contaTransferencia = prompt("Digite o número da conta que deseja realizar a transferência:");
+                            while (isNaN(contaTransferencia) || contaTransferencia.trim() === "") {
+                                contaTransferencia = prompt("Digite apenas números.");
+                            }
+                            var valorTransferencia = parseFloat(prompt("Digite o valor que deseja transferir:"));
+                            if (isNaN(valorTransferencia) || valorTransferencia <= 0) {
+                                alert("Operação não autorizada. O valor deve ser maior que zero.");
+                            } else if (valorTransferencia > saldo) {
+                                alert("Operação não autorizada. Saldo insuficiente.");
+                            } else {
+                                alert("Transferência realizada com sucesso.")
+                                saldo -= valorTransferencia;
+                                extrato.push("Transferência para a conta " + contaTransferencia + "no valor de : " + valorTransferencia);
+                            }
+                        }
+                        break;
+
+                    case 6: // Sair
+                        alert(nome + ", foi um prazer ter você por aqui!");
+                        break;
+
+                    default:
+                        alert("Opção inválida. Tente novamente.");
+                        break;
+                }
+            }
+        }
+
+        inicio();
+    </script>
+</body>
+</html>
