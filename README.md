@@ -1,52 +1,100 @@
-# hora-de-codar-5
-# Caixa Eletrônico
+# 💰 Caixa Eletrônico – Hora de Codar 5
 
-Este é um projeto de caixa eletrônico desenvolvido como exercício de programação em JavaScript. O sistema permite que o usuário execute operações bancárias básicas, como consultar saldo, fazer depósitos, saques, transferências e visualizar extratos. O acesso às operações requer a validação de uma senha.
+Este projeto simula um **Caixa Eletrônico (ATM)** desenvolvido em **JavaScript** como exercício prático de lógica de programação. O sistema permite ao usuário realizar operações bancárias comuns, como consultar saldo, fazer depósitos, saques, transferências e visualizar o extrato. Algumas funcionalidades exigem autenticação por senha para garantir a segurança das operações.
 
-## Funcionalidades
+---
 
-1. **Login do Usuário**
-   - Solicita o nome do usuário e exibe uma mensagem de boas-vindas.
+## ✅ Funcionalidades
 
-2. **Operações Bancárias**
-   - **Saldo**: Consulta o saldo atual, requer autenticação de senha.
-   - **Depósito**: Permite o depósito de um valor no saldo. Valores devem ser positivos.
-   - **Saque**: Permite o saque de um valor do saldo. O valor do saque deve ser maior que zero e não deve exceder o saldo disponível.
-   - **Extrato**: Exibe o extrato das transações realizadas. Requer autenticação de senha.
-   - **Transferência**: Permite a transferência de um valor para uma conta. O número da conta deve ser numérico, e o valor da transferência deve ser maior que zero e não deve exceder o saldo disponível.
+### 🔐 Login do Usuário
+- Solicita o nome do usuário ao iniciar.
+- Exibe uma mensagem personalizada de boas-vindas.
 
-3. **Logout**
-   - Exibe uma mensagem de agradecimento ao usuário ao sair do sistema.
+### 💼 Operações Bancárias
 
-## Requisitos
+1. **Consultar Saldo**
+   - Exibe o saldo atual da conta.
+   - Requer autenticação por senha.
 
-- O sistema deve validar a senha antes de permitir o acesso às opções de saldo, extrato e transferência.
-- O valor de depósito, saque e transferência deve ser positivo.
-- O saldo não pode ficar negativo e as transferências devem ser realizadas somente para contas numéricas válidas.
+2. **Realizar Depósito**
+   - Permite adicionar um valor positivo à conta.
+   - Valores negativos não são aceitos.
 
-## Instruções de Uso
+3. **Realizar Saque**
+   - Permite sacar valores positivos, desde que não excedam o saldo disponível.
 
-1. **Abrir o Caixa Eletrônico**
-   - Ao abrir a página, o sistema solicitará o nome do usuário e exibirá uma mensagem de boas-vindas.
+4. **Visualizar Extrato**
+   - Exibe um histórico das transações realizadas.
+   - Requer autenticação por senha.
 
-2. **Escolher uma Opção**
-   - O usuário deve escolher uma das opções do menu:
-     1. Saldo
+5. **Transferência Bancária**
+   - Permite transferir valores positivos para outra conta.
+   - O número da conta de destino deve ser válido (numérico).
+   - Não permite transferências superiores ao saldo atual.
+   - Requer autenticação por senha.
+
+6. **Logout / Encerrar Sessão**
+   - Exibe uma mensagem de agradecimento ao encerrar o sistema.
+
+---
+
+## 🔒 Regras de Segurança e Validação
+
+- A senha padrão do sistema é **3589**.
+- Apenas usuários autenticados podem acessar as opções de saldo, extrato e transferência.
+- Valores inseridos devem ser **positivos**.
+- O sistema **não permite saldo negativo**.
+- Contas de destino em transferências devem conter apenas **números válidos**.
+
+---
+
+## 🧪 Como Usar
+
+1. **Inicie o sistema**
+   - Abra o arquivo HTML correspondente no navegador.
+   - Digite seu nome para iniciar a sessão.
+
+2. **Selecione uma opção**
+   - Um menu será apresentado com as opções disponíveis:
+     ```
+     1. Consultar Saldo
      2. Depósito
      3. Saque
      4. Extrato
      5. Transferência
      6. Sair
+     ```
 
-3. **Autenticação**
-   - Para consultar saldo, visualizar extrato ou realizar uma transferência, o usuário deve inserir a senha correta (3589).
+3. **Autentique-se quando necessário**
+   - Ao tentar acessar saldo, extrato ou realizar transferências, o sistema solicitará a senha (**3589**).
 
-4. **Operações**
-   - **Depósito**: Insira o valor a ser depositado.
-   - **Saque**: Insira o valor a ser sacado.
-   - **Transferência**: Insira o número da conta e o valor a ser transferido.
+4. **Realize as operações desejadas**
+   - Siga as instruções exibidas na tela para cada operação.
 
-5. **Sair**
-   - Ao escolher a opção de sair, o sistema exibe uma mensagem de agradecimento.
+5. **Saia com segurança**
+   - Ao escolher a opção "Sair", o sistema exibirá uma mensagem de encerramento.
 
+---
 
+## 🛠 Requisitos
+
+- Navegador moderno (Chrome, Firefox, Edge, etc.)
+- Nenhuma dependência externa
+- Apenas HTML + JavaScript puro
+
+---
+
+## 📌 Objetivos do Projeto
+
+- Praticar lógica condicional e estruturas de repetição
+- Trabalhar com `prompt()`, `alert()`, `confirm()` e variáveis
+- Simular fluxos reais de sistemas bancários
+- Aplicar validações e autenticação básica
+
+---
+
+## 👨‍💻 Desenvolvido para fins educacionais
+
+Este projeto faz parte do desafio **Hora de Codar 5** e tem como objetivo reforçar os conceitos fundamentais de programação com **JavaScript**. Ideal para iniciantes que desejam praticar lógica com aplicações interativas e realistas.
+
+---
