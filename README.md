@@ -1,4 +1,4 @@
-# 💰 Caixa Eletrônico – Hora de Codar 5
+# 💰 Caixa Eletrônico 
 
 Este projeto simula um **Caixa Eletrônico (ATM)** desenvolvido em **JavaScript** como exercício prático de lógica de programação. O sistema permite ao usuário realizar operações bancárias comuns, como consultar saldo, fazer depósitos, saques, transferências e visualizar o extrato. Algumas funcionalidades exigem autenticação por senha para garantir a segurança das operações.
 
